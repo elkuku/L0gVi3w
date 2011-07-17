@@ -22,6 +22,7 @@ jimport('joomla.application.component.view');
 class L0gVi3wViewL0gVi3w extends JView
 {
     protected $error_log = '';
+
     /**
      * L0gVi3w view display method.
      *
@@ -31,6 +32,8 @@ class L0gVi3wViewL0gVi3w extends JView
      */
     public function display($tpl = null)
     {
+        jimport('joomla.filesystem.file');
+
         //-- Check if everything is set up correctly
 
         if( ! ini_get('log_errors'))

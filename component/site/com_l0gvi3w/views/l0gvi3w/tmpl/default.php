@@ -14,6 +14,7 @@ defined('_JEXEC') || die('=;)');
 JHtml::_('behavior.mootools');
 
 JFactory::getDocument()->addScript('components/com_l0gvi3w/assets/js/poll.js');
+JFactory::getDocument()->addStyleSheet('components/com_l0gvi3w/assets/css/l0gvi3w.css')
 ?>
 
 <h1><?php echo $this->greeting; ?></h1>
@@ -21,8 +22,8 @@ JFactory::getDocument()->addScript('components/com_l0gvi3w/assets/js/poll.js');
 <?php echo sprintf('Ready to read your log file at %s', $this->error_log); ?>
 <br />
 
-<a href="#" onclick="startPoll();">start</a>
-<a href="#" onclick="stopPoll();">stop</a>
+<a href="javascript:;" onclick="startPoll();">start</a>
+<a href="javascript:;" onclick="stopPoll();">stop</a>
 
 <div id="pollStatus"></div>
 

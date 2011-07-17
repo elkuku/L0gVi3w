@@ -1,4 +1,12 @@
 <?php
+/**
+ * @version SVN: $Id$
+ * @package    L0gVi3w
+ * @subpackage Helpers
+ * @author     Nikolai Plath {@link http://nik-it.de}
+ * @author     Created on 17-Jul-2011
+ * @license    GNU/GPL
+ */
 
 //-- No direct access
 defined('_JEXEC') || die('=;)');

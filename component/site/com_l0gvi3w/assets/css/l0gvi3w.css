@@ -1,0 +1,44 @@
+@CHARSET "UTF-8";
+/**
+ * @version SVN: $Id$
+ * @package    L0gVi3w
+ * @subpackage CSS
+ * @author     Nikolai Plath {@link http://nik-it.de}
+ * @author     Created on 17-Jul-2011
+ * @license    GNU/GPL
+ */
+table.l0gVi3wTable {
+	font-family: monospace;
+}
+
+table.l0gVi3wTable tr.row1 {
+	background-color: #eee;
+}
+
+table.l0gVi3wTable tr:hover {
+	background-color: #ffc;
+}
+
+table.l0gVi3wTable td.Strict_standards {
+	background-color: #cce5ff;
+}
+
+table.l0gVi3wTable td.Notice {
+	background-color: #ffc;
+}
+
+table.l0gVi3wTable td.Warning {
+	background-color: #ffe5b2;
+}
+
+table.l0gVi3wTable td.Fatal_error {
+	background-color: #ff6699;
+}
+
+table.l0gVi3wTable td.Parse_error {
+	background-color: #b2b299;
+}
+
+table.l0gVi3wTable td.dateTime {
+	cursor: help;
+}

@@ -1,3 +1,12 @@
+/**
+ * @version SVN: $Id$
+ * @package    L0gVi3w
+ * @subpackage JavaScript
+ * @author     Nikolai Plath {@link http://nik-it.de}
+ * @author     Created on 17-Jul-2011
+ * @license    GNU/GPL
+ */
+
 var pollRequest = new Request.JSON({
     method: 'post',
     url: 'index.php?option=com_l0gvi3w&task=pollLog&format=raw',

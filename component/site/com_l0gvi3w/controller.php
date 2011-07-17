@@ -23,14 +23,18 @@ class L0gVi3wController extends JController
 {
     public function pollLog()
     {
+        jimport('joomla.filesystem.file');
+
+        require_once JPATH_COMPONENT.'/helpers/classes.php';
+        require_once JPATH_COMPONENT.'/helpers/tailphp.php';
+
         $response = array();
 
-        $s = '';
-        $path = '/home/elkuku/logs/php.errors';
+        $path = ini_get('error_log');
 
         if( ! JFile::exists($path))
         {
-            $s = 'File not found';
+            $response['text'] = 'File not found';
 
             $response['status'] = 1;
 
@@ -39,55 +43,25 @@ class L0gVi3wController extends JController
             return;
         }
 
+        JRequest::setVar('view', 'l0gvi3w');
+
         ob_start();
 
-        require_once JPATH_COMPONENT.'/helpers/classes.php';
-        require_once JPATH_COMPONENT.'/helpers/tailphp.php';
+        parent::display();
 
-        $options = new LogOptions;
-
-        $options->fileName = $path;
-        $options->maxErrors = 10;
-
-        $log = LogViewTailPHP::pollLog($options);
-
-        $s .= 'Time '.date('H:i:s');
-        $s .= '<br />';
-
-        $entries = $log->getEntries();
-
-        $entries = array_reverse($entries);
-
-        foreach ($entries as $item)
-        {
-            $message = $item->message;
-            //echo $message->line;
-
-            echo $message->errorType;
-
-            echo $message->error;
-
-            $link = 'xdebug://';
-
-            $tmp = str_replace(':', '@', $message->links[0]);
-
-            $link .= $tmp;
-
-            $tmp = str_replace(JPATH_ROOT, 'JROOT', $tmp);
-
-            //            $link .= $message->links[0];
-
-            echo '<a href="'.$link.'" title="'.$tmp.'">----&gt;Open</a>';
-
-            echo  '<br />';
-        }//foreach
-
-        $contents = ob_get_clean();
-        $s .= $contents;
-
-        $response['text'] = $s;
-
+        $response['text'] = ob_get_clean();
         $response['status'] = 0;
+
+        $view = $this->getView();
+
+        $error = $view->getError();
+
+        if($error)
+        {
+            $response['text'] = $error.$response['text'];
+
+            $response['status'] = 1;
+        }
 
         echo json_encode($response);
     }//function

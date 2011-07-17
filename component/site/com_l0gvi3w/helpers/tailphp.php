@@ -174,6 +174,18 @@ class ErrorLink
             return;
         }
         else if(preg_match(
+        '|\[(.*)\] PHP (.*): (.*) in input (.*) on line (\d+(?=\z))|U'
+        , $line, $matches))
+        {
+            $this->dateTime = $matches[1];
+            $this->errorType = $matches[2];
+            $this->error = $matches[3];
+
+            $this->links[] = $matches[4].':'.$matches[5];
+
+            return;
+        }
+        else if(preg_match(
         '|\[(.*)\] PHP (.*): (.*) in (.*) on line (\d+(?=\z))|U'
         , $line, $matches))
         {

@@ -1,5 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
-<extension type="component" version="1.6">
+<?xml version="1.0" encoding="UTF-8"?>
+
+<extension type="component" version="1.6" method="upgrade">
   <name>L0gVi3w</name>
   <creationDate>17-Jul-2011</creationDate>
   <author>Nikolai Plath</author>
@@ -9,15 +10,15 @@
   <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
   <version>1.0</version>
   <description>A clickable log file viewer</description>
-  <scriptfile/>
+  <scriptfile />
   <install>
-    <sql/>
+    <sql />
   </install>
   <uninstall>
-    <sql/>
+    <sql />
   </uninstall>
   <update>
-    <schemas/>
+    <schemas />
   </update>
   <files folder="site">
     <folder>assets</folder>
