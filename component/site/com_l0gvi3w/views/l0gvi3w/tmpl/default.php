@@ -13,7 +13,7 @@ defined('_JEXEC') || die('=;)');
 
 JHtml::_('behavior.mootools');
 
-JFactory::getDocument()->addScript('components/com_l0gvi3w/assets/js/poll.js');
+JFactory::getDocument()->addScript('components/com_l0gvi3w/assets/js/l0gvi3w.js');
 JFactory::getDocument()->addStyleSheet('components/com_l0gvi3w/assets/css/l0gvi3w.css')
 ?>
 <script>

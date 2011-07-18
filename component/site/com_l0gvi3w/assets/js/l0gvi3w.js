@@ -39,4 +39,3 @@ function stopPoll()
 
    document.id('pollStatus').set('text', 'idle');
 }
-
