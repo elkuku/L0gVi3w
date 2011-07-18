@@ -116,8 +116,6 @@ class L0gVi3wViewL0gVi3w extends JView
             $html = '<div title="'.$dateTime.'">'.$parts[1].'</div>';
         }
 
-
         return $html;
-    }
-
+    }//function
 }//class

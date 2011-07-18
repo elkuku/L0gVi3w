@@ -65,5 +65,4 @@ class L0gVi3wController extends JController
 
         echo json_encode($response);
     }//function
-
 }//class

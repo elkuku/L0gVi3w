@@ -38,7 +38,8 @@ class L0gVi3wViewL0gVi3w extends JView
 
         if( ! ini_get('log_errors'))
         {
-            JError::raiseWarning(0, 'Error logging is set to OFF - please set the value for log_errors to ON in your php.ini file.');
+            JError::raiseWarning(0, 'Error logging is set to OFF'
+            .' - please set the value for log_errors to ON in your php.ini file.');
 
             return;
         }
@@ -47,14 +48,16 @@ class L0gVi3wViewL0gVi3w extends JView
 
         if( ! $error_log)
         {
-            JError::raiseWarning(0, 'The value for error_log in your php.ini file is empty - please specify a path and file.');
+            JError::raiseWarning(0, 'The value for error_log in your php.ini file is empty'
+            .' - please specify a path and file.');
 
             return;
         }
 
         if( ! JFile::exists($error_log))
         {
-            JError::raiseWarning(0, sprintf('The error log file on %s can not be found or is not accessible.', $error_log));
+            JError::raiseWarning(0, sprintf(
+            'The error log file on %s can not be found or is not accessible.', $error_log));
 
             return;
         }
