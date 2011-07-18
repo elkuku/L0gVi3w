@@ -13,30 +13,30 @@ var pollRequest = new Request.JSON({
     initialDelay: 1000,
     delay: 2000,
     limit: 15000,
- 
+
     onRequest: function(){
        document.id('pollStatus').set('text', 'running...');
     },
- 
+
     onSuccess: function(response){
        document.id('pollLog').set('html', response.text);
        document.id('pollStatus').set('text', response.status);
     },
- 
+
     onFailure: function(){
        document.id('pollStatus').set('text', 'Sorry, your request failed :(');
     }
- 
 });
- 
+
 function startPoll() 
 {
    pollRequest.startTimer();
 }
- 
+
 function stopPoll() 
 {
    pollRequest.stopTimer();
- 
+
    document.id('pollStatus').set('text', 'idle');
 }
+

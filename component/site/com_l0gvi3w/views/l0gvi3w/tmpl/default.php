@@ -16,10 +16,18 @@ JHtml::_('behavior.mootools');
 JFactory::getDocument()->addScript('components/com_l0gvi3w/assets/js/poll.js');
 JFactory::getDocument()->addStyleSheet('components/com_l0gvi3w/assets/css/l0gvi3w.css')
 ?>
+<script>
+function changeState(id)
+{
+    var el = document.getElementById(id);
+
+    el.style.display = (el.style.display != 'none' ? 'none' : '' )
+}//function
+</script>
 
 <h1><?php echo $this->greeting; ?></h1>
 
-<?php echo sprintf('Ready to read your log file at %s', $this->error_log); ?>
+<?php echo sprintf('Ready to read your log file at <tt>%s</tt>', $this->error_log); ?>
 <br />
 
 <a href="javascript:;" onclick="startPoll();">start</a>

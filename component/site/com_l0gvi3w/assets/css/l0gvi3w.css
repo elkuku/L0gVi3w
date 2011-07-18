@@ -46,3 +46,20 @@ table.l0gVi3wTable td.Parse_error {
 table.l0gVi3wTable td.dateTime {
 	cursor: help;
 }
+
+table.l0gVi3wTable a {
+	text-decoration: none;
+}
+
+table.l0gVi3wTable.stack {
+	display: nnone;
+}
+
+table.l0gVi3wTable td.stackLink {
+	text-align: center;
+	cursor: pointer;
+}
+
+table.l0gVi3wTable td.stackLink:hover {
+	background-color: #fff;
+}
