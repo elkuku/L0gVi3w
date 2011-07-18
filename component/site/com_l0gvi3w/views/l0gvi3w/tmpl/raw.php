@@ -19,10 +19,9 @@ if( ! count($this->logEntries)) :
     return;
 endif;
 ?>
-<table class="l0gVi3wTable" width="100%">
+<table class="l0gVi3wTable">
 <thead>
 	<tr>
-		<th>Stack</th>
 		<th>DateTime</th>
 		<th>Type</th>
 		<th>Error / Function</th>
@@ -36,8 +35,7 @@ foreach ($this->logEntries as $item) :
 $message = $item->message;
 $class = str_replace(' ', '_', $item->message->errorType);
 ?>
-<tr class="row<?php echo $i; ?>">
-	<td>STACK</td>
+<tr class="errorEntry row<?php echo $i; ?>">
     <td class="dateTime"><?php echo $this->drawDate($item->message->dateTime); ?></td>
     <td class="<?php echo $class; ?>"><?php echo $item->message->errorType; ?></td>
     <td><?php echo $item->message->error; ?></td>
@@ -45,12 +43,12 @@ $class = str_replace(' ', '_', $item->message->errorType);
 </tr>
 <tr>
 <td colspan="5">
-<table width="100%">
+<table class="l0gVi3wTable">
 <?php
 //var_dump($item->stack);
 
 foreach ($item->stack as $stackItem) { ?>
-    <tr>
+    <tr class="stackEntry">
     	<td><?php echo $stackItem->errorType; ?></td>
     	<td><?php echo $this->drawDate($stackItem->dateTime); ?></td>
     	<td colspan="3"><?php echo $stackItem->error; ?></td>

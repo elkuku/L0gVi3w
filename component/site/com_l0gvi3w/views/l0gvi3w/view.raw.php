@@ -97,7 +97,7 @@ class L0gVi3wViewL0gVi3w extends JView
 
             $title = str_replace(JPATH_ROOT, 'JROOT', $tmp);
 
-            $html .= '<a href="'.$link.'" title="'.$title.'"> ...'.$file.'</a>';
+            $html .= '...<a href="'.$link.'" title="'.$title.'">'.$file.'</a>';
         }//foreach
 
         return $html;

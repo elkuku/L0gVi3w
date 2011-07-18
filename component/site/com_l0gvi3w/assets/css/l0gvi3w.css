@@ -15,8 +15,12 @@ table.l0gVi3wTable tr.row1 {
 	background-color: #eee;
 }
 
-table.l0gVi3wTable tr:hover {
+table.l0gVi3wTable tr.errorEntry:hover {
 	background-color: #ffc;
+}
+
+table.l0gVi3wTable tr.stackEntry:hover {
+	background-color: #cce5ff;
 }
 
 table.l0gVi3wTable td.Strict_standards {
