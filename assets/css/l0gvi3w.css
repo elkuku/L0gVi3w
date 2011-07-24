@@ -5,3 +5,10 @@ h1 {
 	border: 1px solid silver;
 	border-radius: 10px;
 }
+
+pre {
+	background-color: #eee;
+	border: 1px dashed silver;
+	padding: 0.3em;
+	display: inline;
+}
