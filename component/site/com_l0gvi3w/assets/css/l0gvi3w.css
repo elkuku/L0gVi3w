@@ -52,7 +52,6 @@ table.l0gVi3wTable a {
 }
 
 table.l0gVi3wTable.stack {
-	display: nnone;
 }
 
 table.l0gVi3wTable td.stackLink {
@@ -62,4 +61,10 @@ table.l0gVi3wTable td.stackLink {
 
 table.l0gVi3wTable td.stackLink:hover {
 	background-color: #fff;
+}
+
+div#pollLog {
+    border: 1px solid silver;
+    border-radius: 10px;
+    padding: 0.3em;
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * @version SVN: $Id$
+ * @version    SVN: $Id$
  * @package    L0gVi3w
  * @subpackage Helpers
  * @author     Nikolai Plath {@link http://nik-it.de}
@@ -16,65 +16,67 @@ defined('_JEXEC') || die('=;)');
  */
 class LogOptions
 {
-    public $fileName;
+	public $fileName;
 
-    public $maxErrors;
-}//class
+	public $maxErrors;
+}
+
+//class
 
 /**
  * LogView log class.
  */
 class LogViewLog
 {
-    public $mTime = 0;
+	public $mTime = 0;
 
-    public $size = 0;
+	public $size = 0;
 
-    private $entries = array();
+	private $entries = array();
 
-    public function addItem(ErrorItem $item)
-    {
-        array_unshift($this->entries, $item);
-    }//function
+	public function addItem(ErrorItem $item)
+	{
+		array_unshift($this->entries, $item);
+	}
 
-    public function getEntries()
-    {
-        return $this->entries;
-    }//function
+	public function getEntries()
+	{
+		return $this->entries;
+	}
 
-    public function dump()
-    {
-        var_dump($this->entries);
-    }//function
-}//class
+	public function dump()
+	{
+		var_dump($this->entries);
+	}
+}
 
 /**
  * LogView error item class.
  */
 class ErrorItem
 {
-    public $message = '';
+	public $message = '';
 
-    public $stack = array();
+	public $stack = array();
 
-    public $id = 0;
+	public $id = 0;
 
-    public function __construct($id, $line, $stack = array(), $type = '')
-    {
-        $this->id = $id;
+	public function __construct($id, $line, $stack = array(), $type = '')
+	{
+		$this->id = $id;
 
-        if('php' == $type)
-        {
-            $this->message = new ErrorLink($line);
+		if ('php' == $type)
+		{
+			$this->message = new ErrorLink($line);
 
-            foreach($stack as $entry)
-            {
-                $this->stack[] = new ErrorLink($entry);
-            }//foreach
-        }
-        else//
-        {
-            $this->message = $line;
-        }
-    }//function
-}//class
+			foreach ($stack as $entry)
+			{
+				$this->stack[] = new ErrorLink($entry);
+			}
+		}
+		else
+		{
+			$this->message = $line;
+		}
+	}
+}

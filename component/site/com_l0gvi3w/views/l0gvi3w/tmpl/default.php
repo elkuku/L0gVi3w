@@ -22,17 +22,17 @@ function changeState(id)
     var el = document.getElementById(id);
 
     el.style.display = (el.style.display != 'none' ? 'none' : '' )
-}//function
+}
 </script>
 
 <h1><?php echo $this->greeting; ?></h1>
 
-<?php echo sprintf('Ready to read your log file at <tt>%s</tt>', $this->error_log); ?>
+<?php echo sprintf('Ready to read your log file at <code>%s</code>', $this->error_log); ?>
 <br />
 
-<a href="javascript:;" onclick="startPoll();">start</a>
-<a href="javascript:;" onclick="stopPoll();">stop</a>
+<a class="btn" id="l0gvi3wStart" href="javascript:;" onclick="startPoll();"><i class="icon-play"></i> Start</a>
+<a class="btn active" id="l0gvi3wStop" href="javascript:;" onclick="stopPoll();"><i class="icon-stop"></i> Stop</a>
 
-<div id="pollStatus"></div>
+<div id="pollStatus">idle</div>
 
 <div id="pollLog"></div>
